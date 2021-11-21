@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f9331b9e16b044ba130a3393384bc0, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  Speaker: Prophecy
+  Text: It shall be on the day that the world turns to summer, a child in red shall
+    cause an aeon of fortune and the destruction of nature. Upon the day white smoke
+    rises, a woman of grey shall bring forth a time of prosperity and a destruction
+    of power. When siblings rival, a drunk shall bring forth a country's new rise
+    and an age of inhumanity. It shall be then, when summer ends, a suspicious death
+    shall bring forth technological advancement.
