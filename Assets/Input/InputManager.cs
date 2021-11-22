@@ -17,7 +17,7 @@ namespace Atoria
 
 		Input input;
 		[SerializeField]
-		Mover mover;
+		Character character;
 		[SerializeField]
 		GameObject prefab;
 
@@ -73,6 +73,7 @@ namespace Atoria
 		private void LeftClick()
 		{
 			Vector2 mousePos = input.Main.MousePosition.ReadValue<Vector2>();
+			Debug.Log(mousePos);
 
 			if (inputState == InputState.Gameplay)
 			{	
@@ -81,7 +82,7 @@ namespace Atoria
 				{
 					// Targeting
 					// TODO: Make holding shift click through the target instead of on it
-					if (input.Main.Shift.ReadValue<float>() < 1 && rayHit.transform.TryGetComponent<Target>(out Target target))
+					if (input.Main.Shift.ReadValue<float>() < 1 && rayHit.transform.TryGetComponent<Character>(out Character target))
 					{
 						Debug.Log(target.name + " " + target.GetInstanceID());
 						
@@ -90,13 +91,12 @@ namespace Atoria
 						g.transform.SetParent(canvas.transform, false);
 						g.SetActive(true);
 						
-						//mover.StartAttack(target);
+						character.StartAttack(target);
 					} 
 					// Movement
 					else if (NavMesh.SamplePosition(rayHit.point, out NavMeshHit navHit, 1f, NavMesh.AllAreas))
 					{
-						Debug.Log("Succeeded at " + navHit.position);
-						mover.SetMoveTarget(navHit.position);
+						character.SetMoveTarget(navHit.position);
 					}
 				}
 			}
@@ -119,9 +119,9 @@ namespace Atoria
 
 		private void LeftClickUp()
 		{
-			if (mover.isAttacking)
+			if (character.isAttacking)
 			{
-				mover.StopAttack();
+				character.StopAttack();
 			}
 		}
 

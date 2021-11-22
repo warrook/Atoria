@@ -10,6 +10,16 @@ namespace Atoria
 	{
 		[SerializeField]
 		private List<Stat> stats = new List<Stat>();
+		public float HealthMax;
+		public float ResourceMax;
+
+		public CharacterData(string[] stats, int initial_value)
+		{
+			foreach (string s in stats)
+			{
+				AddStat(s, initial_value);
+			}
+		}
 
 		public Stat GetStat(string name)
 		{
